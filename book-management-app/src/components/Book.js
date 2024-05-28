@@ -4,29 +4,28 @@ import { useHistory } from 'react-router-dom';
 
 const Book = ({
   id,
-  bookname,
-  author,
-  price,
-  quantity,
-  date,
-  handleRemoveBook
+  nome,
+  telefone,
+  email,
+  datanascimento,
+  handleRemovecontato
 }) => {
   const history = useHistory();
 
   return (
     <Card style={{ width: '18rem' }} className="book">
       <Card.Body>
-        <Card.Title className="book-title">{bookname}</Card.Title>
+        <Card.Title className="book-title">{nome}</Card.Title>
         <div className="book-details">
-          <div>Author: {author}</div>
-          <div>Quantity: {quantity} </div>
-          <div>Price: {price} </div>
-          <div>Date: {new Date(date).toDateString()}</div>
+          <div>Nome: {telefone}</div>
+          <div>telefone: {email} </div>
+          <div>Email: {email} </div>
+          <div>Data de nascimento: {new Date(datanascimento).toDateString()}</div>
         </div>
         <Button variant="primary" onClick={() => history.push(`/edit/${id}`)}>
           Edit
         </Button>{' '}
-        <Button variant="danger" onClick={() => handleRemoveBook(id)}>
+        <Button variant="danger" onClick={() => handleRemovecontato(id)}>
           Delete
         </Button>
       </Card.Body>
