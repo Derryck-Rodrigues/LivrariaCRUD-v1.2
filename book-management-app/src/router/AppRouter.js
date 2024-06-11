@@ -1,29 +1,29 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from '../components/Header';
-import BooksContext from '../context/BookContext';
-import EditBook from '../components/EditBook';
+import contatoContext from '../context/contatoContext';
+import EditBook from '../components/EditContato';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom';
-import AddBook from '../components/AddBook';
-import BooksList from '../components/BooksList';
+import AddBook from '../components/AddContato';
+import contatoList from '../components/ContatoList';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 const AppRouter = () => {
-  const [books, setBooks] = useLocalStorage('books', []);
+  const [contato, setcontato] = useLocalStorage('contato', []);
 
   return (
     <BrowserRouter>
       <div>
         <Header />
         <div className="main-content">
-          <BooksContext.Provider value={{ books, setBooks }}>
+          <contatoContext.Provider value={{ contato, setcontato }}>
             <Switch>
-              <Route component={BooksList} path="/" exact={true} />
+              <Route component={contatoList} path="/" exact={true} />
               <Route component={AddBook} path="/add" />
               <Route component={EditBook} path="/edit/:id" />
               <Route component={() => <Redirect to="/" />} />
             </Switch>
-          </BooksContext.Provider>
+          </contatoContext.Provider>
         </div>
       </div>
     </BrowserRouter>

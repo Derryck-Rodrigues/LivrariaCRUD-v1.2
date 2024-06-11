@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
-const Book = ({
+const contato = ({
   id,
   nome,
   telefone,
@@ -13,12 +13,12 @@ const Book = ({
   const history = useHistory();
 
   return (
-    <Card style={{ width: '18rem' }} className="book">
+    <Card style={{ width: '18rem' }} className="contato">
       <Card.Body>
-        <Card.Title className="book-title">{nome}</Card.Title>
-        <div className="book-details">
-          <div>Nome: {telefone}</div>
-          <div>telefone: {email} </div>
+        <Card.Title className="contato-title">{nome}</Card.Title>
+        <div className="contato-details">
+          <div>Nome: {nome}</div>
+          <div>telefone: {telefone} </div>
           <div>Email: {email} </div>
           <div>Data de nascimento: {new Date(datanascimento).toDateString()}</div>
         </div>
@@ -33,4 +33,4 @@ const Book = ({
   );
 };
 
-export default Book;
+export default contato;
